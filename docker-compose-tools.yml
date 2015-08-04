@@ -1,0 +1,15 @@
+storage:
+  extends:
+    file: docker-compose-common.yml
+    service: storage
+
+data:
+  extends:
+    file: docker-compose-common.yml
+    service: data
+
+buildtools:
+  image: weyforth/nodejs-buildtools
+  volumes_from:
+    - storage
+    - data

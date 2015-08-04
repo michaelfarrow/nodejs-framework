@@ -1,0 +1,14 @@
+storage:
+  image: weyforth/nodejs-base
+  volumes:
+    - /storage
+
+data:
+  image: weyforth/nodejs-base
+  volumes:
+    - .:/data:rw
+
+node:
+  image: weyforth/nodejs-node
+  ports:
+    - "8080:8080"

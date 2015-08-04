@@ -1,0 +1,10 @@
+{
+  "name": "docker-nodejs-test",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Node.js Hello world app on Ubuntu using docker",
+  "author": "Mike Farrow <contact@mikefarrow.co.uk>",
+  "dependencies": {
+    "express": "4.13.3"
+  }
+}
