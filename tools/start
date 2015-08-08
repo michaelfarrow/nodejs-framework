@@ -16,7 +16,7 @@ fi
 
 heading "Starting"
 
-if [[ $(docker-compose ps | grep _nginx) ]]; then
+if [[ $(docker-compose ps | grep _node) ]]; then
 
 	docker-compose up --no-recreate -d node
 
