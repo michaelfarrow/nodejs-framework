@@ -1,0 +1,26 @@
+#!/bin/bash
+
+source tools/_functions
+
+set -e
+
+build_env="local"
+
+if [[ "$1" != "" ]];
+	then
+	build_env="$1"
+fi
+
+npm_args=""
+
+if [[ "$build_env" != "local" ]]; then
+	npm_args="--silent"
+fi
+
+if [[ "$build_env" != "local" ]]; then
+	heading "Pulling Docker images"
+	docker-compose -f docker-compose-tools.yml pull >/dev/null
+fi
+
+heading "Installing NPM dependencies"
+tools/npm install $npm_args

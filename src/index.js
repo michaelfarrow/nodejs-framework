@@ -1,3 +1,6 @@
+
+// var worker = require('./worker');
+
 var express = require('express');
 
 // Constants
