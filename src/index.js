@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/test', function (req, res) {
-  res.send('Hello world :)\n');
+  res.send('Testing, testing, 1 2 3...\n');
 });
 
 app.listen(PORT);
