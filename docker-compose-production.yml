@@ -1,0 +1,20 @@
+storage:
+  extends:
+    file: docker-compose-common.yml
+    service: storage
+
+data:
+  extends:
+    file: docker-compose-common.yml
+    service: data
+
+node:
+  extends:
+    file: docker-compose-common.yml
+    service: node
+  volumes_from:
+    - storage
+    - data
+  environment:
+    NODE_RUN_ENV: production
+  restart: always
