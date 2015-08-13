@@ -1,7 +1,9 @@
 
 var env     = require('node-env-file'),
+    flag    = require('node-env-flag'),
     fs      = require('fs'),
     express = require('express');
+
 // var worker = require('./worker');
 
 var envPath = __dirname + '/.env.' + process.env.NODE_RUN_ENV;
@@ -22,8 +24,6 @@ app.get('/', function (req, res) {
 app.get('/test', function (req, res) {
   res.send('Testing, testing, 1 2 3...\n');
 });
-
-console.log(process.env);
 
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);
