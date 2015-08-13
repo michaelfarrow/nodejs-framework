@@ -4,6 +4,10 @@ source app-build/tools/_functions
 
 set -e
 
+cd app-build
+tools/env_check
+cd ../
+
 export COMPOSE_FILE="docker-compose-production.yml"
 
 if [[ -d app ]]; then
