@@ -11,6 +11,8 @@ if [[ "$1" != "" ]];
 	build_env="$1"
 fi
 
+heading "Checking Environment"
+
 missing_env=""
 
 while IFS='' read -r env_var || [[ -n "$env_var" ]]; do

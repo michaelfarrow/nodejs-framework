@@ -4,11 +4,16 @@ source app-build/tools/_functions
 
 set -e
 
-cd app-build
-tools/env_check
-cd ../
-
 export COMPOSE_FILE="docker-compose-production.yml"
+
+cd app-build
+
+heading "Pulling Docker images"
+docker-compose pull >/dev/null
+
+tools/env_check
+
+cd ../
 
 if [[ -d app ]]; then
 

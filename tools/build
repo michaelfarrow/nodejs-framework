@@ -13,7 +13,6 @@ fi
 
 [[ -f "src/.env.$build_env" ]] || cp "src/.env.template" "src/.env.$build_env"
 
-heading "Checking Environment"
 tools/env_check $build_env
 
 npm_args=""

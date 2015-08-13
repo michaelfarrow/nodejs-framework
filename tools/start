@@ -9,11 +9,6 @@ if [[ "$1" != "" ]];
 	build_env="$1"
 fi
 
-if [[ "$build_env" != "local" ]]; then
-	heading "Pulling Docker images"
-	docker-compose pull >/dev/null
-fi
-
 heading "Starting"
 
 if [[ $(docker-compose ps | grep _node) ]]; then
