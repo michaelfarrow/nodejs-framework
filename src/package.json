@@ -5,6 +5,7 @@
   "description": "Node.js Hello world app on Ubuntu using docker",
   "author": "Mike Farrow <contact@mikefarrow.co.uk>",
   "dependencies": {
+    "node-env-file": "0.1.7",
     "express": "4.13.3",
     "async": "1.4.1"
   }

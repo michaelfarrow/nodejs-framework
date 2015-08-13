@@ -1,7 +1,14 @@
 
+var env     = require('node-env-file'),
+    fs      = require('fs'),
+    express = require('express');
 // var worker = require('./worker');
 
-var express = require('express');
+var envPath = __dirname + '/.env.' + process.env.NODE_RUN_ENV;
+
+if(fs.existsSync(envPath)){
+	env(envPath);
+}
 
 // Constants
 var PORT = 8080;
@@ -15,6 +22,8 @@ app.get('/', function (req, res) {
 app.get('/test', function (req, res) {
   res.send('Testing, testing, 1 2 3...\n');
 });
+
+console.log(process.env);
 
 app.listen(PORT);
 console.log('Running on http://localhost:' + PORT);
