@@ -2,13 +2,6 @@
 
 source tools/_functions
 
-build_env="local"
-
-if [[ "$1" != "" ]];
-	then
-	build_env="$1"
-fi
-
 heading "Starting"
 
 if [[ $(docker-compose ps | grep _node) ]]; then
