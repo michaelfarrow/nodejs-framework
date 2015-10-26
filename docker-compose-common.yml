@@ -1,12 +1,12 @@
 storage:
-  image: weyforth/nodejs-base
+  image: tianon/true
   volumes:
     - /storage
 
 data:
-  image: weyforth/nodejs-base
+  image: tianon/true
   volumes:
-    - .:/data:rw
+    - .:/data
 
 node:
   image: weyforth/nodejs-node

@@ -1,0 +1,5 @@
+ #!/bin/bash
+
+set -e
+
+tools/run buildtools npm run mocha -d test/converter.js
