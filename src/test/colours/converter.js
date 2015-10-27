@@ -1,4 +1,5 @@
 var converter = require("../../app/converter");
+    // querystring = require("querystring");
 
 describe("Color Code Converter", function() {
   describe("RGB to Hex conversion", function() {
@@ -10,6 +11,36 @@ describe("Color Code Converter", function() {
       expect(redHex).to.equal("ff0000");
       expect(greenHex).to.equal("00ff00");
       expect(blueHex).to.equal("0000ff");
+    });
+
+    it("doesn't convert values < 0", function() {
+      var redHex   = converter.rgbToHex(-1, 0, 0);
+      var greenHex = converter.rgbToHex(0, -1, 0);
+      var blueHex  = converter.rgbToHex(0, 0, -1);
+
+      expect(redHex).to.be.null;
+      expect(greenHex).to.be.null;
+      expect(blueHex).to.be.null
+    });
+
+    it("doesn't convert values > 255", function() {
+      var redHex   = converter.rgbToHex(256, 0, 0);
+      var greenHex = converter.rgbToHex(0, 256, 0);
+      var blueHex  = converter.rgbToHex(0, 0, 256);
+
+      expect(redHex).to.be.null;
+      expect(greenHex).to.be.null;
+      expect(blueHex).to.be.null
+    });
+
+    it("doesn't convert ascii strings", function() {
+      var hex1 = converter.rgbToHex("test", "0", 0);
+      var hex2 = converter.rgbToHex(0, "two", 0);
+      var hex3 = converter.rgbToHex(0, "2", 0);
+
+      expect(hex1).to.be.null;
+      expect(hex2).to.be.null;
+      expect(hex3).to.equal("000200");;
     });
   });
 
@@ -23,7 +54,15 @@ describe("Color Code Converter", function() {
       expect(green).to.deep.equal([0, 255, 0]);
       expect(blue).to.deep.equal([0, 0, 255]);
     });
+
+    it("is valid with or without leading hash", function() {
+      var hexWithHash = converter.hexToRgb("efefef");
+      var hexWithoutHash = converter.hexToRgb("#efefef");
+
+      expect(hexWithHash).to.deep.equal(hexWithoutHash);
+    });
   });
+
 });
 
 describe("Color Code Converter API", function() {

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source ../tools/_functions
+
+set -e
+
+heading "Checking Database"
+../tools/dbisup
+
+heading "Running Tests"
+node ./node_modules/mocha/bin/mocha

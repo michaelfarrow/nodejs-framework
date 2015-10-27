@@ -30,5 +30,8 @@ buildtools:
   volumes_from:
     - storage
     - data
+  environment:
+    multi: spec=- mocha-text-cov=- html-cov=coverage.html
   links:
+    - db
     - node

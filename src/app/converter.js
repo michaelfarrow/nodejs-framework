@@ -1,4 +1,14 @@
+var validator = require("validator");
+
 exports.rgbToHex = function(red, green, blue) {
+  var limits = { min:0, max:255 };
+
+  if( !validator.isInt(red, limits) 
+   || !validator.isInt(green, limits) 
+   || !validator.isInt(blue, limits) 
+  ){
+    return null;
+  }
 
   var redHex   = red.toString(16);
   var greenHex = green.toString(16);
@@ -13,6 +23,8 @@ function pad(hex) {
 }
 
 exports.hexToRgb = function(hex) {
+
+  hex = hex.replace('#', '');
 
   var red   = parseInt(hex.substring(0, 2), 16);
   var green = parseInt(hex.substring(2, 4), 16);

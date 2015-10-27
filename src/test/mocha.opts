@@ -1,2 +1,3 @@
--R spec
+-R mocha-multi
+--require blanket
 --recursive
