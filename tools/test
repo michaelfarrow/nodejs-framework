@@ -2,4 +2,4 @@
 
 set -e
 
-tools/run buildtools npm run mocha -d test/converter.js
+tools/run_npm_local mocha

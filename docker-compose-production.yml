@@ -8,6 +8,11 @@ data:
     file: docker-compose-common.yml
     service: data
 
+db:
+  extends:
+    file: docker-compose-common.yml
+    service: db
+
 node:
   extends:
     file: docker-compose-common.yml
@@ -15,6 +20,8 @@ node:
   volumes_from:
     - storage
     - data
+  links:
+    - db
   environment:
     NODE_RUN_ENV: production
   env_file:

@@ -16,9 +16,11 @@ fi
 tools/env_check $build_env
 
 npm_args=""
+bower_args=""
 
 if [[ "$build_env" != "local" ]]; then
 	npm_args="--silent"
+	bower_args="--quiet"
 fi
 
 if [[ "$build_env" != "local" ]]; then
@@ -28,3 +30,6 @@ fi
 
 heading "Installing NPM dependencies"
 tools/npm install $npm_args
+
+heading "Installing Bower dependencies"
+tools/bower install $bower_args

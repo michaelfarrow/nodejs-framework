@@ -1,0 +1,34 @@
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    block title
+      title Prey Control Panel
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no')
+    block head_imports
+      link(rel='stylesheet', href='stylesheets/normalize.css')
+      link(rel='stylesheet', href='stylesheets/main.css')
+    //-script(src='javascripts/vendor/modernizr-2.7.1.min.js')
+  body(unresolved)
+
+  block page_content
+    //- Add your site or application content here
+    p Hello world! This is HTML5 Boilerplate.
+
+  block foot_scripts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.11.0.min.js"><\/script>')
+    //-script(src='javascripts/plugins.js')
+    //-script(src='javascripts/script.js')
+
+    //- Google Analytics: change UA-XXXXX-X to be your site's ID.
+    //-
+      script
+        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        e.src='//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        ga('create','UA-XXXXX-X');ga('send','pageview');

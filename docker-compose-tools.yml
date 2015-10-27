@@ -8,8 +8,27 @@ data:
     file: docker-compose-common.yml
     service: data
 
-buildtools:
-  image: weyforth/nodejs-buildtools
+db:
+  extends:
+    file: docker-compose-common.yml
+    service: db
+
+node:
+  extends:
+    file: docker-compose-common.yml
+    service: node
   volumes_from:
     - storage
     - data
+  environment:
+    NODE_RUN_ENV: local
+  links:
+    - db
+
+buildtools:
+  image: weyforth/nodejs-buildtools:1.0
+  volumes_from:
+    - storage
+    - data
+  links:
+    - node

@@ -3,3 +3,4 @@
 /.env.*
 !/.env.template
 npm-debug.log
+/bower_components/

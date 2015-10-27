@@ -1,0 +1,5 @@
+ #!/bin/bash
+
+set -e
+
+tools/run_npm_local bower --config.interactive=false --allow-root "$@"
